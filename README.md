@@ -141,3 +141,16 @@ jpackage --type exe --name javafx --module-path lib --module com.feng.javafx/com
 ## 打包安装msi文件
 jpackage --type msi --name javafx --module-path lib --module com.feng.javafx/com.feng.javafx.HelloApplication
 ```
+
+## 利用idea导出为可执行jar包
+1. project structure -> Artifacts -> + -> Jar Artifact -> from modules -> Main class
+配置jar Artifact
+
+2. Build -> Build Artifacts -> javafx:jar -> build
+构建导出可执行jar包
+
+3. 运行
+```shell
+java --module-path F:\tools\javafx-sdk-17.0.9\lib
+  --add-modules javafx.controls,javafx.fxml -jar javafx.jar
+```
